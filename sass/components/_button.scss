@@ -1,0 +1,10 @@
+@import "../utils/variables";
+
+.btn {
+    font-size: 2rem;
+    color: white;
+    background: $btn-bgc-gradient;
+    padding: 2rem;
+    border-radius: 50px;
+    margin-bottom: 7rem;
+}

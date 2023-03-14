@@ -1,0 +1,24 @@
+@import "../utils/variables";
+@import "../mixins/mixins";
+@import "../components/card";
+
+section {
+    padding: 5rem 3rem 7rem;
+}
+
+.step {
+    @include li-content($steps);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    & li.active {
+        background-color: $bgc-purple-light;
+        & span::before {
+            color: $bgc-purple;
+        }
+    }
+}
+
+.restaurants {
+    background-color: $bgc-grey;
+}

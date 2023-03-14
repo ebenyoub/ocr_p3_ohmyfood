@@ -1,0 +1,22 @@
+$steps: (
+    "1": "\f3cd",
+    "2": "\f03a",
+    "3": "\f54e"
+);
+
+$btn-bgc-gradient: linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
+$box-shadow-inset: rgba(50, 50, 93, 0.25) 0px 5px 10px -3px inset;
+$box-shadow-list: rgba(149, 157, 165, 0.4) 0px 8px 14px;
+$bgc-grey: #f6f6f6;
+$bgc-localize: #e7e7e7;
+$bgc-purple: #9356DC;
+$bgc-purple-light: #F5EDFF;
+
+$heart-size: 20px;
+$heart-color: black;
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

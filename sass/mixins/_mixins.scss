@@ -1,0 +1,45 @@
+@import "../utils/variables";
+
+%li-container {
+    position: relative;
+    font-size: 2rem;
+    background-color: $bgc-grey;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: $box-shadow-list;
+}
+
+@mixin li-content($steps) {
+    @each $num, $code in $steps {
+        li {
+            margin: 0 1.2rem;
+            @extend %li-container;
+            &:nth-child(#{$num}) {
+                &::before {
+                    position: absolute;
+                    content: "#{$num}";
+                    left: -12px;
+                    width: 24px;
+                    height: 24px;
+                    font-size: 80%;
+                    @extend %flex-center;
+                    border-radius: 50%;
+                    background-color: $bgc-purple;
+                    color: #fff;
+                }
+                span {
+                    display: flex;
+                    align-items: center;
+                    font-size: clamp(1rem, 4vw, 2rem);
+                    &::before {
+                        font: var(--fa-font-solid);
+                        content: "#{$code}";
+                        color: #737373;
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+}
