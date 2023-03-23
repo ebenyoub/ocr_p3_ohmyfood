@@ -1,20 +1,43 @@
-@import "../utils/variables";
-@import "../mixins/mixins";
 @import "../components/card";
+@import "../components/list";
 
 section {
     padding: 5rem 3rem 7rem;
 }
 
 .step {
-    @include li-content($steps);
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    & li.active {
-        background-color: $bgc-purple-light;
-        & span::before {
-            color: $bgc-purple;
+    li {
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 0.5s ease-in-out;
+
+        &.active {
+            background-color: $bgc-purple-light;
+            & span::before {
+                color: $bgc-purple;
+            }
+        }
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                transition-delay: nth($li-delay, $i);
+                animation: fadeIn 0.5s ease-in-out #{$i * 0.3}s forwards;
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }

@@ -1,22 +1,33 @@
+
+// color
+$heart-color: black;
+$btn-bgc-gradient: linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
+$icon-heart-gradient: linear-gradient(to left bottom, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+$bgc-purple: #9356DC;
+$bgc-purple-light: #F5EDFF;
+$bgc-grey: #f6f6f6;
+$bgc-localize: #e7e7e7;
+$li-icon-color: #7e7e7e;
+$li-text-color: #353535;
+
+
+// header
+$box-shadow-inset: rgba(50, 50, 93, 0.25) 0px 5px 10px -3px inset;
+$box-shadow-list: rgba(149, 157, 165, 0.4) 0px 8px 14px;
+
+
+// section
+$labels: heart-1, heart-2, heart-3, heart-4;
+$heart-size: 20px;
+$li-delay: 0.3s, 0.6s, 0.9s;
+
+
+// icons
+$icon-heart: "\f004";
+$icon-food: "\f2e7";
+$icon-handshake: "\f4c4";
 $steps: (
     "1": "\f3cd",
     "2": "\f03a",
     "3": "\f54e"
 );
-
-$btn-bgc-gradient: linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
-$box-shadow-inset: rgba(50, 50, 93, 0.25) 0px 5px 10px -3px inset;
-$box-shadow-list: rgba(149, 157, 165, 0.4) 0px 8px 14px;
-$bgc-grey: #f6f6f6;
-$bgc-localize: #e7e7e7;
-$bgc-purple: #9356DC;
-$bgc-purple-light: #F5EDFF;
-
-$heart-size: 20px;
-$heart-color: black;
-
-%flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

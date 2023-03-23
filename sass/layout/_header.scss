@@ -27,15 +27,17 @@
         margin-bottom: 3rem;
         text-align: center;
 
-        p {
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 1.5rem;
             padding: 1.5rem;
             box-shadow: $box-shadow-inset;
 
             &::before {
-                font: var(--fa-font-solid);
-                content: "\f3c5";
-                margin-right: 2rem;
+                @include pseudo-icon("\f3c5", "1.3rem");
+                margin-right: 1rem;
             }
         }
     }

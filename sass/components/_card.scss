@@ -10,7 +10,6 @@
         width: 100%;
         height: 100%;
         border-radius: 10px;
-        // scale: 1.1;
         object-fit: cover;
         transform: translateY(-60px);
     }
@@ -34,7 +33,7 @@
         }
 
         p {
-            font-weight: 300;
+            font-weight: 100;
         }
 
 
@@ -42,19 +41,15 @@
             display: none;
         }
 
-        $labels: heart-1, heart-2, heart-3, heart-4;
-
         @each $label in $labels {
-            label[for="#{$label}"]::before {
-                font-family: "Font Awesome 5 Free";
-                content: "\f004";
-                font-size: 25px;
-                font-weight: 300;
+            label::before {
+                content: $icon-heart;
+                font-size: 3rem;
             }
 
             input##{$label}:checked+label[for="#{$label}"]::before {
                 background-clip: text;
-                background: $btn-bgc-gradient;
+                background: $icon-heart-gradient;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-weight: 900;

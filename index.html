@@ -5,12 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./public/css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
+        <script src="https://kit.fontawesome.com/cf618d8113.js" crossorigin="anonymous"></script>
         <title>Ohmyfood!</title>
     </head>
     <body>
@@ -18,7 +13,7 @@
             <a href="#" class="logo"><img src="images/logo/ohmyfood.png" alt="logo Ohmyfood!" /></a>
             <h1>Ohmyfood!</h1>
             <div class="local">
-                <p class="icon">Paris, Belleville</p>
+                <span class="icon">Paris, Belleville</span>
             </div>
             <h2>Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d'exception, séléctionné par nos soins.</p>
@@ -27,9 +22,9 @@
         <section class="step">
             <h2>Fonctionnement</h2>
             <ul class="step">
-                <li><span>Choisissez un restaurant</span></li>
-                <li class="active"><span>Composez votre menu</span></li>
-                <li><span>Dégustez au restaurant</span></li>
+                <li class="li-content"><span class="icon">Choisissez un restaurant</span></li>
+                <li class="active li-content"><span class="icon">Composez votre menu</span></li>
+                <li class="li-content"><span class="icon">Dégustez au restaurant</span></li>
             </ul>
         </section>
         <section class="restaurants">
@@ -44,56 +39,56 @@
                         <p>Ménilmontant</p>
                     </div>
                     <input type="checkbox" id="heart-1" />
-                    <label for="heart-1" class="heart-1"></label>
+                    <label for="heart-1" class="icon heart-1"></label>
                 </figcaption>
             </figure>
             <figure class="card">
                 <a href="#">
-                    <img src="./images/restaurants/stil.jpg" alt="La palette du goût" />
+                    <img src="./images/restaurants/stil.jpg" alt="La note enchantée" />
                 </a>
                 <figcaption>
                     <div class="info">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
                     </div>
                     <input type="checkbox" id="heart-2" />
-                    <label for="heart-2" class="heart-2"></label>
+                    <label for="heart-2" class="icon heart-2"></label>
                 </figcaption>
             </figure>
             <figure class="card">
                 <a href="#">
-                    <img src="./images/restaurants/toa-heftiba.jpg" alt="La palette du goût" />
+                    <img src="./images/restaurants/toa-heftiba.jpg" alt="À la française" />
                 </a>
                 <figcaption>
                     <div class="info">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
+                        <h3>À la française</h3>
+                        <p>Cité Rouge</p>
                     </div>
                     <input type="checkbox" id="heart-3" />
-                    <label for="heart-3" class="heart-3"></label>
+                    <label for="heart-3" class="icon heart-3"></label>
                 </figcaption>
             </figure>
             <figure class="card">
                 <a href="#">
-                    <img src="./images/restaurants/louis-hansel.jpg" alt="La palette du goût" />
+                    <img src="./images/restaurants/louis-hansel.jpg" alt="Le délice des sens" />
                 </a>
                 <figcaption>
                     <div class="info">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
                     </div>
                     <input type="checkbox" id="heart-4" />
-                    <label for="heart-4" class="heart-4"></label>
+                    <label for="heart-4" class="icon heart-4"></label>
                 </figcaption>
             </figure>
         </section>
         <footer class="footer">
             <img src="./images/logo/ohmyfood.png" alt="logo footer" />
             <ul>
-                <li>Proposer un restaurant</li>
-                <li>Devenir partenaire</li>
-                <li>Mentions légales</li>
-                <li>Contact</li>
+                <li class="icon"><a href="#">Proposer un restaurant</a></li>
+                <li class="icon"><a href="#">Devenir partenaire</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </footer>
     </body>

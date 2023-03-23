@@ -1,0 +1,21 @@
+%style-inherit {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+%li-container {
+    position: relative;
+    font-size: 2rem;
+    background-color: $bgc-grey;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: $box-shadow-list;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
