@@ -1,47 +1,37 @@
 @import "../components/card";
 @import "../components/list";
+@import "../utils/animation";
 
 section {
     padding: 5rem 3rem 7rem;
 }
 
+
+
+.restaurants {
+    background-color: $bgc-grey;
+}
+
 .step {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 3rem; 
     gap: 3rem;
     li {
-        opacity: 0;
-        transform: translateY(-50%);
-        transition: all 0.5s ease-in-out;
-
+        max-width: 700px;
+        width: 100%;
+        @include anim-fadeIn(3, Y, '0%', 0.3s);
         &.active {
             background-color: $bgc-purple-light;
             & span::before {
                 color: $bgc-purple;
             }
         }
-
-        @for $i from 1 through 3 {
-            &:nth-child(#{$i}) {
-                transition-delay: nth($li-delay, $i);
-                animation: fadeIn 0.5s ease-in-out #{$i * 0.3}s forwards;
-            }
-        }
+        
     }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(-50%);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
     }
-}
-
-.restaurants {
-    background-color: $bgc-grey;
 }

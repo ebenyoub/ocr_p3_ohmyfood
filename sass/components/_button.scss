@@ -9,3 +9,11 @@
     margin-bottom: 7rem;
     cursor: pointer;
 }
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+.btn:active {
+    transform: scale(0.99);
+}

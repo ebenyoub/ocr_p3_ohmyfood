@@ -3,3 +3,16 @@
     font-weight: 900;
     font-size: $size;
 }
+
+@mixin anim-fadeIn($elements, $translate, $decale, $delay) {
+    opacity: 0;
+    transform: translate#{$translate}($decale);
+    transition: all 0.5s ease-in-out;
+
+    @for $i from 1 through $elements {
+        &:nth-child(#{$i}) {
+            transition-delay: #{$i * $delay}s;
+            animation: fadeIn 0.5s ease-in-out #{$i * $delay} forwards;
+        }
+    }
+}

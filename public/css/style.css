@@ -42,10 +42,13 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   min-width: 340px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 body h2 {
   font-size: 2.5rem;
@@ -54,11 +57,19 @@ body h2 {
 .btn {
   font-size: 2rem;
   color: white;
-  background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
   padding: 2rem;
   border-radius: 50px;
   margin-bottom: 7rem;
   cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  transform: scale(0.99);
 }
 
 .header {
@@ -72,17 +83,23 @@ body h2 {
   text-align: center;
 }
 .header img {
-  height: 3rem;
+  height: clamp(3rem, 5vw, 5rem);
   margin: 2rem auto;
 }
 .header h1 {
   display: none;
 }
+.header h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
 .header .local {
   background-color: #e7e7e7;
   width: 100%;
   margin-bottom: 3rem;
-  text-align: center;
 }
 .header .local span {
   display: flex;
@@ -97,13 +114,6 @@ body h2 {
   font-weight: 900;
   font-size: "1.3rem";
   margin-right: 1rem;
-}
-.header h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  width: 70%;
-  text-align: center;
-  margin-bottom: 1rem;
 }
 .header > p {
   font-size: 2rem;
@@ -120,11 +130,15 @@ body h2 {
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 14px;
   overflow: hidden;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  will-change: transform;
 }
 .card img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  opacity: 1;
   object-fit: cover;
   transform: translateY(-60px);
 }
@@ -153,47 +167,73 @@ body h2 {
 }
 .card figcaption label::before {
   content: "\f004";
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 0.3s ease;
 }
 .card figcaption input#heart-1:checked + label[for=heart-1]::before {
   background-clip: text;
-  background: linear-gradient(to left bottom, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  transform: scale(1.2);
 }
 .card figcaption label::before {
   content: "\f004";
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 0.3s ease;
 }
 .card figcaption input#heart-2:checked + label[for=heart-2]::before {
   background-clip: text;
-  background: linear-gradient(to left bottom, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  transform: scale(1.2);
 }
 .card figcaption label::before {
   content: "\f004";
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 0.3s ease;
 }
 .card figcaption input#heart-3:checked + label[for=heart-3]::before {
   background-clip: text;
-  background: linear-gradient(to left bottom, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  transform: scale(1.2);
 }
 .card figcaption label::before {
   content: "\f004";
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 0.3s ease;
 }
 .card figcaption input#heart-4:checked + label[for=heart-4]::before {
   background-clip: text;
-  background: linear-gradient(to left bottom, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  transform: scale(1.2);
+}
+.card:hover {
+  transform: scale(1.01);
+}
+.card:hover:active {
+  transform: scale(1);
+}
+.card:hover img {
+  filter: brightness(70%);
+}
+
+@media screen and (min-width: 768px) {
+  .card-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
 }
 
 .li-content {
@@ -280,19 +320,49 @@ body h2 {
   width: 20%;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 section {
   padding: 5rem 3rem 7rem;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
 }
 
 .step {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
   gap: 3rem;
 }
 .step li {
+  max-width: 700px;
+  width: 100%;
   opacity: 0;
-  transform: translateY(-50%);
+  transform: translateY("0%");
   transition: all 0.5s ease-in-out;
+}
+.step li:nth-child(1) {
+  transition-delay: 0.3ss;
+  animation: fadeIn 0.5s ease-in-out 0.3s forwards;
+}
+.step li:nth-child(2) {
+  transition-delay: 0.6ss;
+  animation: fadeIn 0.5s ease-in-out 0.6s forwards;
+}
+.step li:nth-child(3) {
+  transition-delay: 0.9ss;
+  animation: fadeIn 0.5s ease-in-out 0.9s forwards;
 }
 .step li.active {
   background-color: #F5EDFF;
@@ -300,31 +370,11 @@ section {
 .step li.active span::before {
   color: #9356DC;
 }
-.step li:nth-child(1) {
-  transition-delay: 0.3s;
-  animation: fadeIn 0.5s ease-in-out 0.3s forwards;
-}
-.step li:nth-child(2) {
-  transition-delay: 0.6s;
-  animation: fadeIn 0.5s ease-in-out 0.6s forwards;
-}
-.step li:nth-child(3) {
-  transition-delay: 0.9s;
-  animation: fadeIn 0.5s ease-in-out 0.9s forwards;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50%);
+@media screen and (min-width: 1200px) {
+  .step {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.restaurants {
-  background-color: #f6f6f6;
 }
 
 .footer {

@@ -1,8 +1,11 @@
 
 // color
 $heart-color: black;
-$btn-bgc-gradient: linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
-$icon-heart-gradient: linear-gradient(to left bottom, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+$pink: #ff79da;
+$purple: #9356dc;
+$btn-bgc-gradient: linear-gradient(180deg, $pink 0%, $purple 100%);
+$btn-bgc-gradient-light: linear-gradient(180deg, lighten($pink, 10%) 0%, lighten($purple, 10%) 100%);
+$icon-heart-gradient: linear-gradient(to left bottom, $purple 0%, $pink 100%);
 $bgc-purple: #9356DC;
 $bgc-purple-light: #F5EDFF;
 $bgc-grey: #f6f6f6;
