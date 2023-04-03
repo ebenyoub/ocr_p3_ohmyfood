@@ -1,6 +1,7 @@
-@mixin pseudo-icon($img, $size: null) {
+@mixin pseudo-icon($img, $size: null, $weight: null) {
     content: $img;
-    font-weight: 900;
+    font: var(--fa-font-solid);
+    font-weight: $weight;
     font-size: $size;
 }
 

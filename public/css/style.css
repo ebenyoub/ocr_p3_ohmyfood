@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 .icon::before {
   display: inline-block;
-  font-style: normal;
-  font-variant: normal;
   text-rendering: auto;
-  font-family: "Font Awesome 5 Free";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -14,20 +12,111 @@
   font-size: inherit;
 }
 
-.li-content {
+.li-content--menu, .li-content--home {
   position: relative;
   font-size: 2rem;
   background-color: #f6f6f6;
-  padding: 3rem;
+  padding: 2rem;
   text-align: center;
   border-radius: 20px;
   box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 14px;
 }
 
-.li-content:nth-child(3)::before, .li-content:nth-child(2)::before, .li-content:nth-child(1)::before {
+.li-content--home:nth-child(3)::before, .li-content--home:nth-child(2)::before, .li-content--home:nth-child(1)::before {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.li-content--menu-info .menu-detail p, .li-content--menu-info h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.heart-1::before {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  font-weight: 100;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 200ms ease;
+}
+
+input#heart-1:checked + label[for=heart-1]::before {
+  background-clip: text;
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transform: scale(1.2);
+}
+
+.heart-2::before {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  font-weight: 100;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 200ms ease;
+}
+
+input#heart-2:checked + label[for=heart-2]::before {
+  background-clip: text;
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transform: scale(1.2);
+}
+
+.heart-3::before {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  font-weight: 100;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 200ms ease;
+}
+
+input#heart-3:checked + label[for=heart-3]::before {
+  background-clip: text;
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transform: scale(1.2);
+}
+
+.heart-4::before {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  font-weight: 100;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 200ms ease;
+}
+
+input#heart-4:checked + label[for=heart-4]::before {
+  background-clip: text;
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transform: scale(1.2);
+}
+
+.heart-5::before {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  font-weight: 100;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transition: transform 200ms ease;
+}
+
+input#heart-5:checked + label[for=heart-5]::before {
+  background-clip: text;
+  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transform: scale(1.2);
 }
 
 *, ::before, ::after {
@@ -43,15 +132,28 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   min-width: 340px;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 body h2 {
   font-size: 2.5rem;
+}
+body main {
+  flex-grow: 1;
+}
+body footer {
+  flex-shrink: 0;
+}
+body input[type=checkbox] {
+  display: none;
 }
 
 .btn {
@@ -62,6 +164,7 @@ body h2 {
   border-radius: 50px;
   margin-bottom: 7rem;
   cursor: pointer;
+  transition: filter 300ms ease, transform 100ms ease;
 }
 
 .btn:hover {
@@ -69,7 +172,7 @@ body h2 {
 }
 
 .btn:active {
-  transform: scale(0.99);
+  transform: scale(0.98);
 }
 
 .header {
@@ -78,9 +181,6 @@ body h2 {
   flex-direction: column;
   align-items: center;
   background-color: #f6f6f6;
-}
-.header a {
-  text-align: center;
 }
 .header img {
   height: clamp(3rem, 5vw, 5rem);
@@ -111,7 +211,7 @@ body h2 {
 }
 .header .local span::before {
   content: "\f3c5";
-  font-weight: 900;
+  font: var(--fa-font-solid);
   font-size: "1.3rem";
   margin-right: 1rem;
 }
@@ -121,6 +221,54 @@ body h2 {
   width: 80%;
   text-align: center;
   margin-bottom: 4rem;
+}
+.header--menu .logo-menu {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header--menu .logo-menu a::before {
+  position: absolute;
+  content: "\f060";
+  font: var(--fa-font-solid);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3rem;
+  transform: scale(2);
+}
+.header--menu .title {
+  width: 100%;
+  height: 50vh;
+  max-height: 300px;
+  background-image: url("/images/restaurants/jay-wennington.jpg");
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: center;
+}
+.header--menu .title .favorite {
+  display: flex;
+  align-items: end;
+  height: 5rem;
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #f6f6f6;
+}
+.header--menu .title .favorite--heart {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 50%;
+}
+.header--menu .title h1 {
+  display: inline;
+  text-align: center;
+  font-family: Shrikhand;
+  font-size: 3rem;
 }
 
 .card {
@@ -162,69 +310,11 @@ body h2 {
 .card figcaption p {
   font-weight: 100;
 }
-.card figcaption input {
-  display: none;
-}
-.card figcaption label::before {
-  content: "\f004";
-  font-size: clamp(2rem, 5vw, 3rem);
-  transition: transform 0.3s ease;
-}
-.card figcaption input#heart-1:checked + label[for=heart-1]::before {
-  background-clip: text;
-  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  transform: scale(1.2);
-}
-.card figcaption label::before {
-  content: "\f004";
-  font-size: clamp(2rem, 5vw, 3rem);
-  transition: transform 0.3s ease;
-}
-.card figcaption input#heart-2:checked + label[for=heart-2]::before {
-  background-clip: text;
-  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  transform: scale(1.2);
-}
-.card figcaption label::before {
-  content: "\f004";
-  font-size: clamp(2rem, 5vw, 3rem);
-  transition: transform 0.3s ease;
-}
-.card figcaption input#heart-3:checked + label[for=heart-3]::before {
-  background-clip: text;
-  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  transform: scale(1.2);
-}
-.card figcaption label::before {
-  content: "\f004";
-  font-size: clamp(2rem, 5vw, 3rem);
-  transition: transform 0.3s ease;
-}
-.card figcaption input#heart-4:checked + label[for=heart-4]::before {
-  background-clip: text;
-  background: linear-gradient(to left bottom, #9356dc 0%, #ff79da 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  transform: scale(1.2);
-}
 .card:hover {
   transform: scale(1.01);
 }
 .card:hover:active {
   transform: scale(1);
-}
-.card:hover img {
-  filter: brightness(70%);
 }
 
 @media screen and (min-width: 768px) {
@@ -237,11 +327,31 @@ body h2 {
 }
 
 .li-content {
+  max-width: 700px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY("0%");
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.li-content:nth-child(1) {
+  transition-delay: 0.3ss;
+  animation: fadeIn 0.5s ease-in-out 0.3s forwards;
+}
+.li-content:nth-child(2) {
+  transition-delay: 0.6ss;
+  animation: fadeIn 0.5s ease-in-out 0.6s forwards;
+}
+.li-content:nth-child(3) {
+  transition-delay: 0.9ss;
+  animation: fadeIn 0.5s ease-in-out 0.9s forwards;
+}
+.li-content--home {
   margin: 0 1.2rem;
   margin: 0 1.2rem;
   margin: 0 1.2rem;
 }
-.li-content:nth-child(1)::before {
+.li-content--home:nth-child(1)::before {
   position: absolute;
   content: "1";
   left: -12px;
@@ -252,22 +362,22 @@ body h2 {
   background-color: #9356DC;
   color: white;
 }
-.li-content:nth-child(1) span {
+.li-content--home:nth-child(1) span {
   display: flex;
   align-items: center;
   text-align: center;
   font-size: clamp(1rem, 4vw, 2rem);
   color: #353535;
 }
-.li-content:nth-child(1) span::before {
+.li-content--home:nth-child(1) span::before {
   content: "\f3cd";
-  font-weight: 900;
+  font: var(--fa-font-solid);
   display: flex;
   justify-content: center;
   color: #7e7e7e;
   width: 20%;
 }
-.li-content:nth-child(2)::before {
+.li-content--home:nth-child(2)::before {
   position: absolute;
   content: "2";
   left: -12px;
@@ -278,22 +388,22 @@ body h2 {
   background-color: #9356DC;
   color: white;
 }
-.li-content:nth-child(2) span {
+.li-content--home:nth-child(2) span {
   display: flex;
   align-items: center;
   text-align: center;
   font-size: clamp(1rem, 4vw, 2rem);
   color: #353535;
 }
-.li-content:nth-child(2) span::before {
+.li-content--home:nth-child(2) span::before {
   content: "\f03a";
-  font-weight: 900;
+  font: var(--fa-font-solid);
   display: flex;
   justify-content: center;
   color: #7e7e7e;
   width: 20%;
 }
-.li-content:nth-child(3)::before {
+.li-content--home:nth-child(3)::before {
   position: absolute;
   content: "3";
   left: -12px;
@@ -304,20 +414,94 @@ body h2 {
   background-color: #9356DC;
   color: white;
 }
-.li-content:nth-child(3) span {
+.li-content--home:nth-child(3) span {
   display: flex;
   align-items: center;
   text-align: center;
   font-size: clamp(1rem, 4vw, 2rem);
   color: #353535;
 }
-.li-content:nth-child(3) span::before {
+.li-content--home:nth-child(3) span::before {
   content: "\f54e";
-  font-weight: 900;
+  font: var(--fa-font-solid);
   display: flex;
   justify-content: center;
   color: #7e7e7e;
   width: 20%;
+}
+.li-content--home:hover {
+  background-color: #F5EDFF;
+}
+.li-content--home:hover span::before {
+  color: #9356DC;
+}
+@media screen and (min-width: 1200px) {
+  .li-content--home {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.li-content--menu {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+}
+.li-content--menu-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  text-align: left;
+  padding: 2rem;
+  gap: 1rem;
+  transition: all 500ms ease;
+}
+.li-content--menu-info h3 {
+  font-size: 2rem;
+}
+.li-content--menu-info .menu-detail {
+  display: flex;
+  justify-content: space-between;
+}
+.li-content--menu-info .menu-detail p {
+  width: calc(100% - 5rem);
+  font-size: 1.8rem;
+}
+.li-content--menu-info .menu-detail span {
+  width: 5rem;
+  text-align: right;
+}
+.li-content--menu:hover .li-content--menu-info {
+  max-width: calc(100% - 100px);
+  min-width: calc(100% - 100px);
+}
+.li-content--menu:hover .icon--valid {
+  transform: translateX(0);
+}
+.li-content--menu:hover .icon--valid::before {
+  transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
+}
+.li-content .icon--valid {
+  position: relative;
+  min-width: 100px;
+  background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  transform: translateX(100px);
+  transition: transform 500ms ease;
+}
+.li-content .icon--valid::before {
+  position: absolute;
+  content: "\f058";
+  font: var(--fa-font-solid);
+  font-size: "3rem";
+  left: 50%;
+  top: 50%;
+  color: white;
+  transform: translate(-50%, -50%) scale(1.5) rotate(90deg);
+  transition: all 500ms 250ms ease;
 }
 
 @keyframes fadeIn {
@@ -334,6 +518,23 @@ section {
   padding: 5rem 3rem 7rem;
 }
 
+.section-menu {
+  background-color: #f6f6f6;
+}
+.section-menu h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.section-menu h2::after {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #99E2D0;
+  transform: translateY(1rem);
+}
+
 .restaurants {
   background-color: #f6f6f6;
 }
@@ -345,36 +546,40 @@ section {
   margin-top: 3rem;
   gap: 3rem;
 }
-.step li {
+.step .li-content {
   max-width: 700px;
   width: 100%;
   opacity: 0;
   transform: translateY("0%");
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
-.step li:nth-child(1) {
+.step .li-content:nth-child(1) {
   transition-delay: 0.3ss;
   animation: fadeIn 0.5s ease-in-out 0.3s forwards;
 }
-.step li:nth-child(2) {
+.step .li-content:nth-child(2) {
   transition-delay: 0.6ss;
   animation: fadeIn 0.5s ease-in-out 0.6s forwards;
 }
-.step li:nth-child(3) {
+.step .li-content:nth-child(3) {
   transition-delay: 0.9ss;
   animation: fadeIn 0.5s ease-in-out 0.9s forwards;
 }
-.step li.active {
+.step .li-content--home:hover {
   background-color: #F5EDFF;
 }
-.step li.active span::before {
+.step .li-content--home:hover span::before {
   color: #9356DC;
 }
 @media screen and (min-width: 1200px) {
-  .step {
+  .step .li-content--home {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+.step--menu {
+  background-color: #f6f6f6;
 }
 
 .footer {
@@ -396,13 +601,13 @@ section {
 }
 .footer ul li:nth-child(1)::before {
   content: "\f2e7";
-  font-weight: 900;
+  font: var(--fa-font-solid);
   width: 3.5rem;
   color: #fff;
 }
 .footer ul li:nth-child(2)::before {
   content: "\f4c4";
-  font-weight: 900;
+  font: var(--fa-font-solid);
   width: 3.5rem;
   color: #fff;
 }

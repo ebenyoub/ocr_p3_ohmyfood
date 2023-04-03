@@ -39,38 +39,12 @@
         p {
             font-weight: 100;
         }
-
-
-        input {
-            display: none;
-        }
-
-        @each $label in $labels {
-            label::before {
-                content: $icon-heart;
-                font-size: clamp(2rem, 5vw, 3rem);
-                transition: transform 0.3s ease;
-            }
-
-            input##{$label}:checked+label[for="#{$label}"]::before {
-                background-clip: text;
-                background: $icon-heart-gradient;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                font-weight: 900;
-                transform: scale(1.2);
-            }
-        }
     }
 
     &:hover {
         transform: scale(1.01);
         &:active {
             transform: scale(1);
-        }
-
-        & img {
-            filter: brightness(70%);
         }
     }
 }

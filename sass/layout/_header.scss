@@ -8,10 +8,6 @@
     align-items: center;
     background-color: $bgc-grey;
 
-    a {
-        text-align: center;
-    }
-
     img {
         height: clamp(3rem, 5vw, 5rem);
         margin: 2rem auto;
@@ -55,5 +51,61 @@
         width: 80%;
         text-align: center;
         margin-bottom: 4rem;
+    }
+
+    &--menu {
+        & .logo-menu {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            & a::before {
+                // display: inline-block;
+                position: absolute;
+                @include pseudo-icon("\f060");
+                top: 50%;
+                transform: translateY(-50%);
+                left: 3rem;
+                transform: scale(2);
+            }
+        }
+
+        & .title {
+            width: 100%;
+            height: 50vh;
+            max-height: 300px;
+            background-image: url("/images/restaurants/jay-wennington.jpg");
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: center;
+
+            & .favorite {
+                display: flex;
+                align-items: end;
+                height: 5rem;
+                border-radius: 30px 30px 0 0;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                background-color: $bgc-grey;
+
+                &--heart {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 100%;
+                    height: 50%;
+                }
+            }
+
+            h1 {
+                display: inline;
+                text-align: center;
+                font-family: Shrikhand;
+                font-size: 3rem;
+            }
+        }
     }
 }

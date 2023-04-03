@@ -20,7 +20,6 @@ $box-shadow-list: rgba(149, 157, 165, 0.4) 0px 8px 14px;
 
 
 // section
-$labels: heart-1, heart-2, heart-3, heart-4;
 $heart-size: 20px;
 $li-delay: 0.3s, 0.6s, 0.9s;
 
@@ -29,6 +28,7 @@ $li-delay: 0.3s, 0.6s, 0.9s;
 $icon-heart: "\f004";
 $icon-food: "\f2e7";
 $icon-handshake: "\f4c4";
+$icon-check: "\f058";
 $steps: (
     "1": "\f3cd",
     "2": "\f03a",

@@ -1,0 +1,15 @@
+@for $i from 1 through 5 {
+    .heart-#{$i}::before {
+        @include pseudo-icon($icon-heart, clamp(2rem, 5vw, 3rem), 100);
+        transition: transform 200ms ease;
+    }
+
+    input#heart-#{$i}:checked+label[for="heart-#{$i}"]::before {
+        background-clip: text;
+        background: $icon-heart-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        transform: scale(1.2);
+    }
+}

@@ -1,37 +1,137 @@
 .li-content {
-    @each $num, $code in $steps {
-        margin: 0 1.2rem;
-        @extend %li-container;
+    max-width: 700px;
+    width: 100%;
+    @include anim-fadeIn(3, Y, '0%', 0.3s);
+    position: relative;
 
-        &:nth-child(#{$num}) {
-            &::before {
-                @extend %flex-center;
-                position: absolute;
-                content: "#{$num}";
-                left: -12px;
-                width: 24px;
-                height: 24px;
-                font-size: 80%;
-                border-radius: 50%;
-                background-color: $bgc-purple;
-                color: white;
-            }
+    &--home {
 
-            span {
-                display: flex;
-                align-items: center;
-                text-align: center;
-                font-size: clamp(1rem, 4vw, 2rem);
-                color: $li-text-color;
+        @each $num,
+        $code in $steps {
+            margin: 0 1.2rem;
+            @extend %li-container;
 
+            &:nth-child(#{$num}) {
                 &::before {
-                    @include pseudo-icon("#{$code}", null);
+                    @extend %flex-center;
+                    position: absolute;
+                    content: "#{$num}";
+                    left: -12px;
+                    width: 24px;
+                    height: 24px;
+                    font-size: 80%;
+                    border-radius: 50%;
+                    background-color: $bgc-purple;
+                    color: white;
+                }
+
+                span {
                     display: flex;
-                    justify-content: center;
-                    color: $li-icon-color;
-                    width: 20%;
+                    align-items: center;
+                    text-align: center;
+                    font-size: clamp(1rem, 4vw, 2rem);
+                    color: $li-text-color;
+
+                    &::before {
+                        @include pseudo-icon("#{$code}", null);
+                        display: flex;
+                        justify-content: center;
+                        color: $li-icon-color;
+                        width: 20%;
+                    }
                 }
             }
+        }
+
+        &:hover {
+            background-color: $bgc-purple-light;
+
+            & span::before {
+                color: $bgc-purple;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &--menu {
+        @extend %li-container;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        padding: 0;
+        cursor: pointer;
+
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            text-align: left;
+            padding: 2rem;
+            gap: 1rem;
+            transition: all 500ms ease;
+
+            h3 {
+                font-size: 2rem;
+                @extend %text-overflow;
+            }
+
+            & .menu-detail {
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    width: calc(100% - 5rem);
+                    font-size: 1.8rem;
+                    @extend %text-overflow;
+                }
+
+                span {
+                    width: 5rem;
+                    text-align: right;
+                }
+
+            }
+        }
+
+        &:hover {
+            .li-content--menu-info {
+                max-width: calc(100% - 100px);
+                min-width: calc(100% - 100px);
+            }
+
+            .icon--valid {
+                transform: translateX(0);
+
+                &::before {
+                    transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
+                }
+            }
+        }
+    }
+
+    .icon--valid {
+        position: relative;
+        min-width: 100px;
+        background-color: #99E2D0;
+        border-radius: 0 20px 20px 0;
+        transform: translateX(100px);
+        transition: transform 500ms ease;
+
+        &::before {
+            position: absolute;
+            @include pseudo-icon($icon-check, "3rem");
+            left: 50%;
+            top: 50%;
+            color: white;
+            transform: translate(-50%, -50%) scale(1.5) rotate(90deg);
+            transition: all 500ms 250ms ease;
         }
     }
 }

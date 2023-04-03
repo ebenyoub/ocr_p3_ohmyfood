@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "../components/icon";
 @import "../utils/extend";
+@import "../components/heart";
 
 *, ::before, ::after {
     margin: 0;
@@ -15,6 +17,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
@@ -24,4 +27,18 @@ body {
     min-width: 340px;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    & main {
+        flex-grow: 1;
+    }
+
+    & footer {
+        flex-shrink: 0;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
 }
