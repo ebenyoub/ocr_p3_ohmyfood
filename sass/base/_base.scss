@@ -3,33 +3,43 @@
 @import "../components/icon";
 @import "../utils/extend";
 @import "../components/heart";
+@import "../components/loader";
 
-*, ::before, ::after {
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     list-style-type: none;
     text-decoration: none;
     color: black;
+    // border: 1px solid red;
 }
 
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    h2 {
-        font-size: 2.5rem;
-    }
-    min-width: 340px;
-    max-width: 1200px;
+    
+    min-width: 320px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-x: hidden;
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+
     & main {
         flex-grow: 1;
     }

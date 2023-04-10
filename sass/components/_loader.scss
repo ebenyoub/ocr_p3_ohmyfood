@@ -1,0 +1,27 @@
+.loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: loader 0s forwards;
+    
+    .letter {
+        color: #484848;
+        font-family: "Shrikhand", Helvetica, Arial, sans-serif;
+        font-size: clamp(3rem, 7vw, 8rem);
+        letter-spacing: 15px;
+        animation: flash 1.2s infinite;
+        @for $i from 1 through 9 {
+            &:nth-child(#{$i}) {
+                animation-delay: .1s * $i;
+            }
+        }
+    }
+}
+

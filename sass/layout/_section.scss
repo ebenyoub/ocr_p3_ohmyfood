@@ -4,14 +4,29 @@
 
 section {
     padding: 5rem 3rem 7rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.entree {
+    padding-top: 7rem;
+}
+
+@media screen and (min-width:1024px) {
+    .restaurants {
+        border-radius: 40px;
+        margin-bottom: 5rem;
+    }
 }
 
 .section-menu {
     background-color: $bgc-grey;
+
     & h2 {
         text-transform: uppercase;
         font-size: 2rem;
         font-weight: 300;
+
         &::after {
             display: block;
             content: "";
@@ -19,6 +34,19 @@ section {
             height: 3px;
             background-color: #99E2D0;
             transform: translateY(1rem)
+        }
+    }
+
+    &.btn-container {
+        text-align: center;
+        padding-bottom: 7rem;
+        // margin-bottom: 6rem;
+        padding-top: 0;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+
+        @media screen and (min-width: 1024px) {
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 6rem;
         }
     }
 }
@@ -37,9 +65,12 @@ section {
     .li-content {
         max-width: 700px;
         width: 100%;
-        @include anim-fadeIn(3, Y, '0%', 0.3s);
         position: relative;
+        @include anim-fadeIn(4, Y, 0, .3s);
+
         &--home {
+            transition: all 300ms ease-in-out;
+
             &:hover {
                 background-color: $bgc-purple-light;
 
@@ -47,17 +78,24 @@ section {
                     color: $bgc-purple;
                 }
             }
-            @media screen and (min-width: 1200px) {
+
+            @media screen and (min-width: 600px) {
                 flex-direction: row;
                 justify-content: space-between;
             }
         }
 
-        
+
     }
 
     &--menu {
         background-color: $bgc-grey;
     }
 
+    @media screen and (min-width: 1024px) {
+        &--home {
+            flex-direction: row;
+        }
+
+    }
 }

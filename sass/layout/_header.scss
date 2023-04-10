@@ -39,7 +39,7 @@
             box-shadow: $box-shadow-inset;
 
             &::before {
-                @include pseudo-icon("\f3c5", "1.3rem");
+                @include pseudo-icon("\f3c5", 1.3rem);
                 margin-right: 1rem;
             }
         }
@@ -57,44 +57,60 @@
         & .logo-menu {
             position: relative;
             width: 100%;
+            max-width: 1024px;
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
             & a::before {
-                // display: inline-block;
                 position: absolute;
                 @include pseudo-icon("\f060");
                 top: 50%;
-                transform: translateY(-50%);
+                transform: translateY(-50%) scale(3);
                 left: 3rem;
-                transform: scale(2);
             }
         }
 
         & .title {
+            position: relative;
             width: 100%;
-            height: 50vh;
-            max-height: 300px;
-            background-image: url("/images/restaurants/jay-wennington.jpg");
+            height: 350px;
+            max-height: 350px;
             background-repeat: no-repeat;
-            background-size: 120%;
+            background-size: cover;
             background-position: center;
+
+            &--note-enchantee {
+                background-image: url("/images/restaurants/stil.jpg");
+            }
+            &--palette-gout {
+                background-image: url("/images/restaurants/jay-wennington.jpg");
+            }
+            &--francaise {
+                background-image: url("/images/restaurants/toa-heftiba.jpg");
+            }
+            &--delice-sens {
+                background-image: url("/images/restaurants/louis-hansel.jpg");
+            }
 
             & .favorite {
                 display: flex;
                 align-items: end;
-                height: 5rem;
-                border-radius: 30px 30px 0 0;
-                position: absolute;
                 width: 100%;
+                max-width: 1024px;
+                height: 9rem;
+                padding: 0 3rem;
+                border-radius: 40px 40px 0 0;
+                position: absolute;
+                left: 50%;
                 bottom: 0;
                 background-color: $bgc-grey;
+                transform: translate(-50%, 30px);
 
                 &--heart {
                     display: flex;
                     align-items: center;
-                    justify-content: space-around;
+                    justify-content: space-between;
                     width: 100%;
                     height: 50%;
                 }
@@ -103,8 +119,8 @@
             h1 {
                 display: inline;
                 text-align: center;
-                font-family: Shrikhand;
-                font-size: 3rem;
+                font-family: "Shrikhand", Helvetica, Arial, sans-serif;
+                font-size: clamp(2rem, 6vw, 3rem);
             }
         }
     }

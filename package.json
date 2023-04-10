@@ -1,11 +1,28 @@
 {
   "name": "projet-3",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebenyoub/ocr_p3_ohmyfood.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ebenyoub/ocr_p3_ohmyfood/issues"
+  },
+  "homepage": "https://github.com/ebenyoub/ocr_p3_ohmyfood#readme",
+  "description": "",
+  "devDependencies": {
+    "stylelint": "^15.4.0",
+    "stylelint-config-recommended": "^11.0.0",
+    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-scss": "^4.6.0"
+  },
+  "dependencies": {
+    "sass": "^1.61.0"
+  }
 }

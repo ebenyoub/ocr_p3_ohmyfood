@@ -12,8 +12,44 @@
 
     @for $i from 1 through $elements {
         &:nth-child(#{$i}) {
-            transition-delay: #{$i * $delay}s;
+            transition-delay: #{$i * $delay};
             animation: fadeIn 0.5s ease-in-out #{$i * $delay} forwards;
         }
     }
 }
+
+// @mixin hover-checked($checkboxes) {
+//     @each $input in $checkboxes {
+//         @if (input#{$input}:checked) {
+//             .li-content--menu-info {
+//                 max-width: calc(100% - 100px);
+//                 min-width: calc(100% - 100px);
+//             }
+    
+//             .icon--valid {
+//                 transform: translateX(0);
+    
+//                 &::before {
+//                     transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
+//                 }
+//             }
+//         }
+    
+//         @else {
+//             &:hover {
+//                 .li-content--menu-info {
+//                     max-width: calc(100% - 100px);
+//                     min-width: calc(100% - 100px);
+//                 }
+    
+//                 .icon--valid {
+//                     transform: translateX(0);
+    
+//                     &::before {
+//                         transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

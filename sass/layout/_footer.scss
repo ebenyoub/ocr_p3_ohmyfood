@@ -1,34 +1,43 @@
 .footer {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: #353535;
-    padding: 3rem;
-    img {
-        transform: scale(.4);
-        transform-origin: left;
-        filter: invert(100%);
-        -webkit-filter: invert(100%);
-    }
+    
+    .footer-container {
+        max-width: 1024px;
+        width: 100%;
+        padding: 3rem;
+        margin: 0 auto;
+        img {
+            transform: scale(.4);
+            transform-origin: left;
+            filter: invert(100%);
+            -webkit-filter: invert(100%);
+        }
 
-    ul {
-        li {
-            color: #fff;
-            font-size: 2rem;
-            line-height: 4rem;
-            &:nth-child(1)::before {
-                @include pseudo-icon($icon-food);
-                width: 3.5rem;
+        ul {
+            li {
                 color: #fff;
-            }
-            &:nth-child(2)::before {
-                @include pseudo-icon($icon-handshake);
-                width: 3.5rem;
-                color: #fff;
-            }
-            a {
-                @extend %style-inherit;
+                font-size: 2rem;
+                line-height: 4rem;
+
+                &:nth-child(1)::before {
+                    @include pseudo-icon($icon-food);
+                    width: 3.5rem;
+                    color: #fff;
+                }
+
+                &:nth-child(2)::before {
+                    @include pseudo-icon($icon-handshake);
+                    width: 3.5rem;
+                    color: #fff;
+                }
+
+                a {
+                    @extend %style-inherit;
+                }
             }
         }
     }
-
 }

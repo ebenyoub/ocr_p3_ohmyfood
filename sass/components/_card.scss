@@ -1,14 +1,15 @@
 .card {
     position: relative;
     margin-top: 3rem;
+    max-width: clamp(365px, 50vw, 100%);
     aspect-ratio: 335/250;
     border-radius: 10px;
     box-shadow: $box-shadow-list;
     overflow: hidden;
     transform: scale(1);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     will-change: transform;
-    
+
     img {
         width: 100%;
         height: 100%;
@@ -16,6 +17,23 @@
         opacity: 1;
         object-fit: cover;
         transform: translateY(-60px);
+    }
+
+    .new::after {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "Nouveau";
+        width: 100px;
+        height: 30px;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        opacity: .8;
+        background-color: #99E2D0;
+
     }
 
     figcaption {
@@ -50,9 +68,9 @@
 }
 
 .card-container {
-
+    display: grid;
+    justify-content: center;
     @media screen and (min-width: 768px) {
-        display: grid;
         width: 100%;
         grid-template-columns: 1fr 1fr;
         column-gap: 3rem;

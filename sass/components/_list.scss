@@ -1,7 +1,9 @@
+// element li avec ses composants
+
 .li-content {
     max-width: 700px;
     width: 100%;
-    @include anim-fadeIn(3, Y, '0%', 0.3s);
+    @include anim-fadeIn(3, Y, 0, 0.3s);
     position: relative;
 
     &--home {
@@ -17,6 +19,8 @@
                     position: absolute;
                     content: "#{$num}";
                     left: -12px;
+                    top: 50%;
+                    transform: translateY(-50%);
                     width: 24px;
                     height: 24px;
                     font-size: 80%;
@@ -29,7 +33,7 @@
                     display: flex;
                     align-items: center;
                     text-align: center;
-                    font-size: clamp(1rem, 4vw, 2rem);
+                    font-size: clamp(1.6rem, 5vw, 1.7rem); // calcul vw: (PREFERRED_FONT_SIZE / (WINDOW_WIDTH / 100)
                     color: $li-text-color;
 
                     &::before {
@@ -51,7 +55,7 @@
             }
         }
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 1000px) {
             flex-direction: row;
             justify-content: space-between;
         }
@@ -75,7 +79,7 @@
             text-align: left;
             padding: 2rem;
             gap: 1rem;
-            transition: all 500ms ease;
+            transition: all 500ms ease-in-out;
 
             h3 {
                 font-size: 2rem;
@@ -100,6 +104,25 @@
             }
         }
 
+        .icon--valid {
+            position: relative;
+            min-width: 100px;
+            background-color: #99E2D0;
+            border-radius: 0 20px 20px 0;
+            transform: translateX(100px);
+            transition: transform 500ms ease;
+
+            &::before {
+                position: absolute;
+                @include pseudo-icon($icon-check, 2rem);
+                left: 50%;
+                top: 50%;
+                color: white;
+                transform: translate(-50%, -50%) scale(1.5) rotate(90deg);
+                transition: all 500ms 250ms ease;
+            }
+        }
+
         &:hover {
             .li-content--menu-info {
                 max-width: calc(100% - 100px);
@@ -113,25 +136,6 @@
                     transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
                 }
             }
-        }
-    }
-
-    .icon--valid {
-        position: relative;
-        min-width: 100px;
-        background-color: #99E2D0;
-        border-radius: 0 20px 20px 0;
-        transform: translateX(100px);
-        transition: transform 500ms ease;
-
-        &::before {
-            position: absolute;
-            @include pseudo-icon($icon-check, "3rem");
-            left: 50%;
-            top: 50%;
-            color: white;
-            transform: translate(-50%, -50%) scale(1.5) rotate(90deg);
-            transition: all 500ms 250ms ease;
         }
     }
 }
