@@ -1,10 +1,10 @@
 // element li avec ses composants
 
 .li-content {
+    position: relative;
     max-width: 700px;
     width: 100%;
     @include anim-fadeIn(3, Y, 0, 0.3s);
-    position: relative;
 
     &--home {
 
@@ -16,17 +16,17 @@
             &:nth-child(#{$num}) {
                 &::before {
                     @extend %flex-center;
-                    position: absolute;
                     content: "#{$num}";
+                    position: absolute;
                     left: -12px;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 24px;
                     height: 24px;
+                    color: white;
                     font-size: 80%;
                     border-radius: 50%;
                     background-color: $bgc-purple;
-                    color: white;
+                    transform: translateY(-50%);
                 }
 
                 span {

@@ -19,7 +19,14 @@
         ul {
             display: flex;
             flex-direction: column;
+            @media screen and (min-width: 630px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+
+            }
             @media screen and (min-width: 1024px) {
+                display: flex;
                 flex-direction: row;
                 justify-content: space-between;
             }

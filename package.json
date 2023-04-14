@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
-    "build": "postcss public/css/style.css -u autoprefixer -o ./build/style.min.css"
+    "build": "postcss public/css/style.css -u autoprefixer -o ./build/style.min.css -w"
   },
   "author": "",
   "license": "ISC",
