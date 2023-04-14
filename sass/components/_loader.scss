@@ -9,14 +9,14 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: loader 0s forwards;
+    animation: loader 1s .5s forwards;
     
     .letter {
         color: #484848;
         font-family: "Shrikhand", Helvetica, Arial, sans-serif;
         font-size: clamp(3rem, 7vw, 8rem);
         letter-spacing: 15px;
-        animation: flash 1.2s infinite;
+        animation: flash 1s infinite;
         @for $i from 1 through 9 {
             &:nth-child(#{$i}) {
                 animation-delay: .1s * $i;

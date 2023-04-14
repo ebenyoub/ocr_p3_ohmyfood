@@ -15,12 +15,10 @@
     list-style-type: none;
     text-decoration: none;
     color: black;
-    // border: 1px solid red;
 }
 
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth;
     height: 100%;
     width: 100%;
     overflow-x: hidden;
@@ -35,6 +33,7 @@ body {
     flex-direction: column;
     height: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
     
     h2 {
         font-size: 2.5rem;
@@ -49,6 +48,6 @@ body {
     }
 
     input[type="checkbox"] {
-        display: none;
+        opacity: 0;
     }
 }

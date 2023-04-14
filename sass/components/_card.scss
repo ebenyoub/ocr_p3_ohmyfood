@@ -1,5 +1,6 @@
 .card {
     position: relative;
+    justify-self: center;
     margin-top: 3rem;
     max-width: clamp(365px, 50vw, 100%);
     aspect-ratio: 335/250;
@@ -69,7 +70,6 @@
 
 .card-container {
     display: grid;
-    justify-content: center;
     @media screen and (min-width: 768px) {
         width: 100%;
         grid-template-columns: 1fr 1fr;

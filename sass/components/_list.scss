@@ -63,20 +63,19 @@
 
     &--menu {
         @extend %li-container;
+        position: relative;
         width: 100%;
         display: flex;
         overflow: hidden;
         padding: 0;
         cursor: pointer;
-
+        transition: all .3s;
 
         &-info {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            min-width: 100%;
-            max-width: 100%;
             text-align: left;
+            width: 100%;
             padding: 2rem;
             gap: 1rem;
             transition: all 500ms ease-in-out;
@@ -100,17 +99,16 @@
                     width: 5rem;
                     text-align: right;
                 }
-
             }
         }
 
         .icon--valid {
             position: relative;
-            min-width: 100px;
+            width: 0;
             background-color: #99E2D0;
             border-radius: 0 20px 20px 0;
-            transform: translateX(100px);
-            transition: transform 500ms ease;
+            transform: translateX($check-size);
+            transition: all 500ms .2s ease;
 
             &::before {
                 position: absolute;
@@ -118,24 +116,54 @@
                 left: 50%;
                 top: 50%;
                 color: white;
-                transform: translate(-50%, -50%) scale(1.5) rotate(90deg);
+                transform: translate(-50%, -50%) scale(1) rotate(90deg);
                 transition: all 500ms 250ms ease;
             }
         }
 
         &:hover {
+            transform: scale(1.01);
             .li-content--menu-info {
-                max-width: calc(100% - 100px);
-                min-width: calc(100% - 100px);
+                width: calc(100% - $check-size);
             }
 
             .icon--valid {
-                transform: translateX(0);
-
+                width: $check-size;
+                transform: scale(1.01) translateX(0);
+    
                 &::before {
-                    transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
+                    transform: translate(-50%, -50%) scale(1) rotate(360deg);
                 }
             }
         }
+
+        &:active {
+            transform: scale(1);
+        }
+
+        input.li-select:checked ~ .li-content--menu-info {
+            width: calc(100% - $check-size);
+        }
+
+        input.li-select:checked ~ .icon--valid {
+            width: $check-size;
+            transform: translateX(0);
+
+            &::before {
+                transform: translate(-50%, -50%) scale(1.5) rotate(720deg);
+            }
+        }
     }
+
+}
+
+.li-select {
+    width: 0;
+}
+
+.label-onClick {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
 }
