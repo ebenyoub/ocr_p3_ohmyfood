@@ -38,6 +38,9 @@
   transform: scale(1);
   transition: all 0.3s;
 }
+.heart-1:hover {
+  transform: scale(1.05);
+}
 .heart-1:active {
   transform: scale(0.9);
 }
@@ -62,6 +65,9 @@ input#heart-1:checked + label[for=heart-1]::before {
 .heart-2 {
   transform: scale(1);
   transition: all 0.3s;
+}
+.heart-2:hover {
+  transform: scale(1.05);
 }
 .heart-2:active {
   transform: scale(0.9);
@@ -88,6 +94,9 @@ input#heart-2:checked + label[for=heart-2]::before {
   transform: scale(1);
   transition: all 0.3s;
 }
+.heart-3:hover {
+  transform: scale(1.05);
+}
 .heart-3:active {
   transform: scale(0.9);
 }
@@ -113,6 +122,9 @@ input#heart-3:checked + label[for=heart-3]::before {
   transform: scale(1);
   transition: all 0.3s;
 }
+.heart-4:hover {
+  transform: scale(1.05);
+}
 .heart-4:active {
   transform: scale(0.9);
 }
@@ -137,6 +149,9 @@ input#heart-4:checked + label[for=heart-4]::before {
 .heart-5 {
   transform: scale(1);
   transition: all 0.3s;
+}
+.heart-5:hover {
+  transform: scale(1.05);
 }
 .heart-5:active {
   transform: scale(0.9);
@@ -328,6 +343,13 @@ body input[type=checkbox] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.header--menu .logo-menu a:hover {
+  transform-origin: center;
+  transform: scale(1.05);
+}
+.header--menu .logo-menu a:active {
+  transform: scale(1);
 }
 .header--menu .logo-menu a::before {
   position: absolute;

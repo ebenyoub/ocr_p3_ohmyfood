@@ -2,6 +2,9 @@
     .heart-#{$i} {
         transform: scale(1);
         transition: all .3s;
+        &:hover {
+            transform: scale(1.05);
+        }
         &:active {
             transform: scale(.9);
         }

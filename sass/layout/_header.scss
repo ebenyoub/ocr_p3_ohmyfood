@@ -63,6 +63,15 @@
             justify-content: center;
             align-items: center;
 
+            & a:hover {
+                transform-origin: center;
+                transform: scale(1.05);
+            }
+
+            & a:active {
+                transform: scale(1);
+            }
+            
             & a::before {
                 position: absolute;
                 @include pseudo-icon("\f060");
