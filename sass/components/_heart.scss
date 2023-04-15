@@ -7,6 +7,7 @@
         }
         &::before {
             @include pseudo-icon($icon-heart, clamp(2rem, 5vw, 3rem), 100);
+            cursor: pointer;
             transition: transform 1000ms ease;
         }
     }

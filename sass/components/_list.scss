@@ -108,7 +108,7 @@
             background-color: #99E2D0;
             border-radius: 0 20px 20px 0;
             transform: translateX($check-size);
-            transition: all 500ms .2s ease;
+            transition: all 500ms ease-in-out;
 
             &::before {
                 position: absolute;
@@ -129,7 +129,7 @@
 
             .icon--valid {
                 width: $check-size;
-                transform: scale(1.01) translateX(0);
+                transform: translateX(0) scale(1.01);
     
                 &::before {
                     transform: translate(-50%, -50%) scale(1) rotate(360deg);
