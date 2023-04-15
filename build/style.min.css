@@ -553,7 +553,7 @@ body input[type=checkbox] {
 }
 @media screen and (min-width: 1024px) {
   .card {
-    aspect-ratio: 498/231;
+    aspect-ratio: 490/251;
   }
 }
 .card img {
