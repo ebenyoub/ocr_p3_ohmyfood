@@ -9,6 +9,7 @@
     background-color: $bgc-grey;
 
     img {
+        width: auto;
         height: clamp(3rem, 5vw, 5rem);
         margin: 2rem auto;
     }

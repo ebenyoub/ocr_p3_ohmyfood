@@ -281,6 +281,7 @@ body input[type=checkbox] {
   background-color: #f6f6f6;
 }
 .header img {
+  width: auto;
   height: clamp(3rem, 5vw, 5rem);
   margin: 2rem auto;
 }
