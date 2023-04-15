@@ -10,6 +10,10 @@
     transform: scale(1);
     transition: all 0.3s ease-in-out;
     will-change: transform;
+    @media screen and (min-width: 1024px) {
+        aspect-ratio: 498 / 231;
+    }
+
 
     img {
         width: 100%;

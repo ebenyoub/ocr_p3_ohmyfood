@@ -14,13 +14,15 @@ section {
 
 @media screen and (min-width:1024px) {
     .restaurants {
-        border-radius: 40px;
+        border-radius: 30px;
         margin-bottom: 5rem;
     }
 }
 
 .section-menu {
     background-color: $bgc-grey;
+    max-width: 1024px;
+    margin: auto;
 
     & h2 {
         text-transform: uppercase;
